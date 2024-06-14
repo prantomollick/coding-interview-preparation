@@ -6,7 +6,6 @@ function twoNumberSum(array, targetSum) {
       if (array[i] + array[j] === targetSum) return [array[i], array[j]];
     }
   }
-
   return [];
 }
 

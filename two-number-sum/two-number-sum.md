@@ -15,7 +15,7 @@ array = [3, 5, -4, 8, 11, 1, -1, 6] targetSum = 10
 
 ---
 
-### Two-sum problem: Brute Force approach
+### Two-sum problem: Brute Force approach: solution-1
 
 The Two-Sum problem requires finding two numbers within an array that add up to a specific target sum. The brute force solution is a straightforward method to tackle this challenge
 
@@ -41,7 +41,9 @@ function twoSumBruteForce(array, targetSum):
 Time complexity: $$O(n^2)$$ n is the number of elements in the array. This is due to the nested loop structure, where each element is compared with every other element.
 Space Complexity: $$O(1)$$ as no additional space is required apart from the input array.
 
-### Two-Sum Problem: Optimal Solution
+---
+
+### Two-Sum Problem: Optimal Solution solution2
 
 ##### Algorithm Intuition
 
@@ -66,3 +68,38 @@ The Two-Sum problem seeks a pair of numbers in an array that add up to a given t
 
 4. **No Pair Found**
    - If the iteration completes without finding a pair, return an empty array to signify no solution exists.
+
+---
+
+### Two-Sum Problem: Sorting and Two Pointers Approach
+
+##### Algorithm Intuition
+
+The Two-Sum problem requires finding two numbers in an array that sum up to a specific target. The Sorting and Two Pointers approach is a time-efficient method that leverages sorting to reduce the problem's complexity.
+
+##### Steps:
+
+1. **Initial Validation**
+
+   - Ensure the array is not empty and contains at least two elements, which are necessary to form a pair.
+
+2. **Sorting**
+
+   - Sort the array in non-decreasing order. This step uses JavaScript's built-in sorting method, which is optimized for performance.
+
+3. **Iteration with Two Pointers**
+
+   - Initialize two pointers: one at the start (`left`) and one at the end (`right`) of the sorted array.
+   - While the `left` pointer is less than the `right` pointer:
+     - Calculate the sum of the elements at the two pointers.
+     - If the sum equals the target sum, return the indices of the two elements.
+     - If the sum is less than the target sum, move the `left` pointer forward to increase the sum.
+     - If the sum is greater than the target sum, move the `right` pointer backward to decrease the sum.
+
+4. **No Pair Found**
+   - If the pointers meet and no pair has been found, return an empty array to indicate that no solution exists.
+
+### Complexity Analysis
+
+- **Time Complexity**: $$O(n \log n)$$, primarily due to the sorting step. The subsequent iteration with two pointers operates in linear time, $$O(n)$$.
+- **Space Complexity**: $$O(1)$$, as the algorithm only requires space for the pointers and no additional data structures.
