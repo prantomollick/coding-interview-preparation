@@ -40,3 +40,29 @@ function twoSumBruteForce(array, targetSum):
 
 Time complexity: $$O(n^2)$$ n is the number of elements in the array. This is due to the nested loop structure, where each element is compared with every other element.
 Space Complexity: $$O(1)$$ as no additional space is required apart from the input array.
+
+### Two-Sum Problem: Optimal Solution
+
+##### Algorithm Intuition
+
+The Two-Sum problem seeks a pair of numbers in an array that add up to a given target sum. This solution optimizes time complexity by trading off some space.
+
+### Steps:
+
+1. **Initial Validation**
+
+   - Confirm the array is non-empty and contains at least two elements, fulfilling the basic requirement for a pair.
+
+2. **HashTable Declaration**
+
+   - Initialize a hashtable to keep track of the complement values. The complement of an element is defined as `targetSum - element`. This facilitates constant-time lookups.
+
+3. **Iteration**
+
+   - Traverse the array, calculating the complement for each element.
+   - Check if the complement is already in the hashtable:
+     - If it is, return the current element and its complement as the solution pair.
+     - If not, store the current element in the hashtable and continue.
+
+4. **No Pair Found**
+   - If the iteration completes without finding a pair, return an empty array to signify no solution exists.
